@@ -1,51 +1,52 @@
 @import url('https://fonts.googleapis.com/css2?family=Bangers&family=Radio+Canada&family=Road+Rage&family=Smooch+Sans:wght@100;200;300;400;500;600;900&family=Square+Peg&display=swap');
+:root{
+    --yellow: rgb(255,225,0);
+    --blackish: rgb(43,43,43);
+    --whitish: rgb(225,225,225);
+}
 body{
     margin: 0px;
-    font-family: 'Radio Canada';
-}
+    font-family: 'Radio Canada';}
+main{
+    margin: 0px;}
+
+
 /* Header */
 #header{
     position: sticky;
     top: 0px;
     width: 100%;
-    background-color: yellow;
+    background-color: var(--yellow);
     font-family: 'Road Rage';
     z-index: 20;
     display: grid;
-    grid-template-columns: 27% 1fr;
-
-}
+    grid-template-columns: 27% 1fr;}
 #header-img{
-    padding-left: 2%;
-}
+    padding-left: 2%;}
 #logo-link{
     text-decoration: none;
-    color: rgb(43,43,43);
-    display: flex;
-}
+    color: var(--blackish);
+    display: flex;}
 #logo-link:hover + nav{
-    width: 96%;
-}
+    width: 96%;}
 #header-img-text{
     position: relative;
     left: 30px;
     font-size: 25px;
     font-weight: 900;
-    padding-top: 15px;
-    font-size: 25px;
-    transition: 1s;
-    font-family: 'Radio Canada';
-}
-#logo-link:hover #header-img-text{
-    font-size: 30px;
     padding-top: 10px;
+    font-size: 35px;
+    transition: 1s;
+    font-family: 'Smooch Sans';}
+#logo-link:hover #header-img-text{
+    font-size: 40px;
+    padding-top: 5px;
     color: black;
-    letter-spacing: 3px;
-}
+    letter-spacing: 3px;}
 #header-img-text::after{
     position: relative;
     content:'';
-    top: -2px;
+    top: -6px;
     display: block;
     height: 4px;
     background:linear-gradient(90deg,rgba(43,43,43,0),rgba(255, 255, 255, 0.844) 25% 75%,transparent 100%);
@@ -53,25 +54,21 @@ body{
     border-radius: 5px;
     transition: 0.7s;
     margin-left: 46%;
-    margin-right: 46%;
-}
+    margin-right: 46%;}
 #logo-link:hover #header-img-text::after{
     width: 92%;
     margin-left: 0%;
-    margin-right: 0%;
-}
+    margin-right: 0%;}
 nav{
     width: 100%;
-    transition: 1s;
-}
+    transition: 1s;}
 #nav-ul{
     margin-top: 0px;
     width: 95%;
     height: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
-}
+    justify-content: flex-end;}
 .nav-link{
     display: flex;
     list-style: none;
@@ -86,29 +83,24 @@ nav{
     justify-content: center;;
     transition: 0.5s;
     border-radius: 2rem;
-    margin-left: 15px;
-}
+    margin-left: 15px;}
 .nav-link:hover{
-    color: rgb(225,225,225);
-    background-color: rgb(43,43,43);
+    color: var(--whitish);
+    background-color: var(--blackish);
     border-radius: 0rem;
-    letter-spacing: 2px;
-}
+    letter-spacing: 2px;}
 .nav-link li{
-    align-self: center;
-}
+    align-self: center;}
 .nav-link li::after{
     content:'';
     display: block;
     height: 4px;
     transition: 0.5s;
-    width: 0%;
-}
+    width: 0%;}
 .nav-link:hover li::after{
-    background-color: rgb(225, 225, 225);
+    background-color: var(--whitish);
     border-radius: 2px;
-    width: 100%;
-}
+    width: 100%;}
 /*  */
 /*  */
 /*  */
@@ -121,18 +113,17 @@ nav{
 #input{
     padding: 20px 0px 20px 0px;
     background-color: rgb(253, 253, 202);
-}
+    margin-bottom: -10px;}
 #input h1, #features h1{
     position:relative; /* potrzebne bym nie był pod tłem */
     text-align: center;
     font-size: 30px;
     color:rgb(43, 43, 43);
-    text-shadow: 1px 1px 0px yellow;
+    text-shadow: 1px 1px 0px var(--yellow);
     width: fit-content;
     margin: auto;
     z-index: 2;
-    letter-spacing: 5px;
-}
+    letter-spacing: 5px;}
 #h1-background{
     display: block;
     background-color: rgb(255, 255, 0);
@@ -142,92 +133,84 @@ nav{
     margin: auto;
     position: relative;
     top: -15px;
-    z-index: 1;
-}
-#input p{
+    z-index: 1;}
+#input p, #features p{
     font-weight: 400;
     width: max-content;
     margin: auto;
     font-family: 'Smooch Sans';
-    font-size: 20px;
-}
+    font-size: 20px;}
 #input form{
     align-items: center;
     display: flex;
-    flex-direction: column;
-}
+    flex-direction: column;}
 #email{
     border-radius: 2px;
     border-width: 4px;
-    border-color: yellow;
+    border-color: var(--yellow);
     border-style: solid;
-    box-shadow: 3px 3px 0px rgb(43,43,43), 6px 6px 0px yellow;
+    box-shadow: 3px 3px 0px var(--blackish), 6px 6px 0px var(--yellow);
     padding: 5px;
     width: 250px;
-    margin: 10px;
-}
+    margin: 10px;}
 #input input[type='email']{
     font-size: 18px;
     font-family: 'Smooch Sans';
-    text-align: center;
-}
+    text-align: center;}
 #input input[type='email']:focus{
     outline: none;
-    font-weight: 600;
-}
+    font-weight: 600;}
 #submit{
     margin-top: 5px;
     width: 150px;
-    border-color: yellow;
-    box-shadow: 3px 3px 0px rgb(43,43,43), 6px 6px 0px yellow;
+    border-color: var(--yellow);
+    box-shadow: 3px 3px 0px var(--blackish), 6px 6px 0px var(--yellow);
     border-width: 3px;
     border-style: solid;
     background-color: white;
-    color: rgb(43,43,43);  
+    color: var(--blackish);  
     font-family: 'Smooch Sans';
     font-size: 20px;
     font-weight: 900;
-    transition: 0.7s;
-}
+    transition: 0.7s;}
 #submit:hover{
-    background-color: rgb(43,43,43);
+    background-color: var(--blackish);
     color: white;
-    letter-spacing: 3px;
-}
+    letter-spacing: 3px;}
 #submit:active{
     width: 160px;
-    height: 30px;
-}
-
+    height: 30px;}
+/*  */
+/*  */
+/*  */
 /* Zalety produktu czy coś */
-
+/*  */
+/*  */
+/*  */
 #features{
     padding-top: 20px;
     padding-bottom: 20px;
     width: 810px;
-    margin: auto;
-}
+    margin: auto;}
 #features #h1-background{
-    width: 180px;
-}
+    width: 180px;}
 #features div{
     display: grid;
     grid-template-columns: 100px 1fr;
     font-size: 30px;
     font-family: 'Smooch Sans';
     font-weight: 500;
-    height: 80px;
-}
+    height: 80px;}
+#features p{
+    margin-bottom: 10px;}
 #features b{
-    text-shadow: 1px 1px 0px yellow;
+    text-shadow: 1px 1px 0px var(--yellow);
     font-weight: 700;
-    letter-spacing: 3px;
-}
+    letter-spacing: 3px;}
 #features span{
     position: relative;
     top: 50%;
-    transform: translateY(-35%);
-}
+    transform: translateY(-35%);}
 /*  */
 /*  */
 /*  */
@@ -246,52 +229,126 @@ nav{
     background-color: rgba(255,255,255,0);
     margin-top: -5px;
     margin-bottom: -5px;
-    border-color: rgb(0, 0, 0);
-}
+    border-color: black;}
 #ht-border-color{
     border-top: 4px;
     border-bottom: 4px;
-    border-color: yellow;
+    border-color: var(--yellow);
     border-style: solid;
     width: 100%;
     border-left: 0px;
     border-right:0px;
-    margin-bottom: 20px;
-}
+    margin-bottom: 20px;}
 #ht-wrap{
     margin:0px;
     display: flex;
-    justify-content: center;
-}
+    justify-content: center;}
 #video{
     border-style: solid;
     border-width: 3px;
-    border-color: rgb(255, 225, 0);
+    border-color: var(--yellow);
     box-shadow: 3px 0px 0px black,3px 3px 0px black, -3px 0px 0px black,-3px 3px 0px black, 0px 3px 0px black, 0px -3px 0px black,-3px -3px 0px black, 3px -3px 0px black;
     /*box shadow ułożony jest tak że najpierw jest ściana a potem respektywne uzupełnienie w kącie*/
     margin-bottom: 20px;
     margin-top: 20px;
-    transition: 0.7s;
-}
+    transition: 1s;}
 .ht-h2{
     writing-mode: vertical-rl;
     text-orientation: upright;
     text-align: center;
     color:rgb(43, 43, 43);
-    text-shadow: 2px 1px 0px yellow;
+    text-shadow: 2px 1px 0px var(--yellow);
     font-family: 'Road Rage';
     font-size: 50px;
-    transition: 0.7s;
-}
+    transition: 1s;}
 #ht-wrap:hover .ht-h2{
-    letter-spacing: 10px;
-    font-size: 60px;
-    color:yellow;
+    letter-spacing: 6px;
+    font-size: 55px;
+    color:var(--yellow);
     background-color: rgb(43, 43, 43);  
     border-radius: 20px;
-    text-shadow: 2px 1px 0px black;
-}
+    text-shadow: 2px 1px 0px black;}
 #ht-wrap:hover #video{
     margin-left: 20px;
-    margin-right: 20px;
+    margin-right: 20px;}
+/*  */
+/*  */
+/*  */
+/* Ceny */
+/*  */
+/*  */
+/*  */
+#prices{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr ;
+    padding-bottom: 40px;
+    padding-top: 20px;
+    color: var(--whitish);
 }
+.usługa{
+    background-color:rgb(43, 43, 43);
+    margin: 0px 20px 0px 20px;
+    border-style: solid;
+    border-color: var(--yellow);
+    border-width: 3px;
+    box-shadow: 3px 0px 0px black,3px 3px 0px black, -3px 0px 0px black,-3px 3px 0px black, 0px 3px 0px black, 0px -3px 0px black,-3px -3px 0px black, 3px -3px 0px black;
+    display: grid;
+    grid-template-rows: 40px 80px 200px 1fr;
+}
+.cena, .nazwa-usługi{
+    text-align: center;
+    letter-spacing: 3px;
+    text-transform:  uppercase;
+    text-shadow: 1px 1px 0px black;
+}
+.cena{
+    border-width: 0px;
+    border-bottom: 3px;
+    border-style: solid;
+    border-color:var(--yellow);
+    padding-bottom: 10px;
+}
+.nazwa-usługi{
+    font-size: 23px;
+    margin-bottom: -5px;
+}
+#prices ul{
+    margin-top: -5px;
+    list-style:square;
+}
+#prices li{
+    padding: 5px 0px 5px 0px;
+    margin-right: 30px;
+}
+.buy{
+    width: 100%;
+    font-family: 'Road Rage';
+    font-size: 25px;
+    letter-spacing: 2px;
+    text-shadow: 1px 1px 0px var(--yellow);
+    transition: 0.7s;
+    border-radius: 0px;
+    border-style: none;
+}
+.buy:hover{
+    font-size: 30px;
+    letter-spacing: 5px;
+    background-color: var(--blackish);
+    color: var(--yellow);
+    text-shadow: 1px 1px 0px black;
+    border-style: none;
+    cursor: pointer;
+}
+/*  */
+/*  */
+/*  */
+/* Footer */
+/*  */
+/*  */
+/*  */
+/* footer{
+    background-color: var(--yellow);
+    height: 100%;
+    margin-bottom: -16px;
+    margin-top: -21px;
+} */
