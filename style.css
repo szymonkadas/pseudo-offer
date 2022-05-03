@@ -8,33 +8,27 @@ body{
     position: sticky;
     top: 0px;
     width: 100%;
-    display: flex;
-    flex-direction: row;
-    /* background: linear-gradient(180deg,rgb(153, 219, 252), rgb(255, 255, 255)) */
     background-color: yellow;
     font-family: 'Road Rage';
     z-index: 20;
+    display: grid;
+    grid-template-columns: 27% 1fr;
+
 }
 #header-img{
-    margin-left: 5%;
+    padding-left: 2%;
 }
 #logo-link{
     text-decoration: none;
     color: rgb(43,43,43);
     display: flex;
 }
-@keyframes logo-size{
-    from {font-size: 25px;}
-    to{font-size: 30px;
-    color: black;
-    padding-top: 10px}
-}
-@keyframes menu-logo{
-    0% {width: 0%;}
-    100%{width: 90%;}
+#logo-link:hover + nav{
+    width: 96%;
 }
 #header-img-text{
-    margin-left: 30px;
+    position: relative;
+    left: 30px;
     font-size: 25px;
     font-weight: 900;
     padding-top: 15px;
@@ -67,8 +61,7 @@ body{
     margin-right: 0%;
 }
 nav{
-    width: 70%;
-    margin-left: 8%;
+    width: 100%;
     transition: 1s;
 }
 #nav-ul{
@@ -93,7 +86,7 @@ nav{
     justify-content: center;;
     transition: 0.5s;
     border-radius: 2rem;
-    margin-right: 20px;
+    margin-left: 15px;
 }
 .nav-link:hover{
     color: rgb(225,225,225);
@@ -116,13 +109,20 @@ nav{
     border-radius: 2px;
     width: 100%;
 }
-
+/*  */
+/*  */
+/*  */
+/*  */
 /* Formularz */
-
+/*  */
+/*  */
+/*  */
+/*  */
 #input{
     padding: 20px 0px 20px 0px;
+    background-color: rgb(253, 253, 202);
 }
-#input h1{
+#input h1, #features h1{
     position:relative; /* potrzebne bym nie był pod tłem */
     text-align: center;
     font-size: 30px;
@@ -133,11 +133,11 @@ nav{
     z-index: 2;
     letter-spacing: 5px;
 }
-#newsletter-background{
+#h1-background{
     display: block;
     background-color: rgb(255, 255, 0);
     width: 235px;
-    height: 6px;
+    height: 6px !important;
     border-radius: 50%;
     margin: auto;
     position: relative;
@@ -202,9 +202,13 @@ nav{
 /* Zalety produktu czy coś */
 
 #features{
-    padding-top: 0px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     width: 810px;
     margin: auto;
+}
+#features #h1-background{
+    width: 180px;
 }
 #features div{
     display: grid;
@@ -223,4 +227,71 @@ nav{
     position: relative;
     top: 50%;
     transform: translateY(-35%);
+}
+/*  */
+/*  */
+/*  */
+/* Video  */
+/*  */
+/*  */
+/*  */
+#how-to{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    border-width: 6px;
+    border-left: 0px;
+    border-right:0px;
+    border-style: dashed;
+    background-color: rgba(255,255,255,0);
+    margin-top: -5px;
+    margin-bottom: -5px;
+    border-color: rgb(0, 0, 0);
+}
+#ht-border-color{
+    border-top: 4px;
+    border-bottom: 4px;
+    border-color: yellow;
+    border-style: solid;
+    width: 100%;
+    border-left: 0px;
+    border-right:0px;
+    margin-bottom: 20px;
+}
+#ht-wrap{
+    margin:0px;
+    display: flex;
+    justify-content: center;
+}
+#video{
+    border-style: solid;
+    border-width: 3px;
+    border-color: rgb(255, 225, 0);
+    box-shadow: 3px 0px 0px black,3px 3px 0px black, -3px 0px 0px black,-3px 3px 0px black, 0px 3px 0px black, 0px -3px 0px black,-3px -3px 0px black, 3px -3px 0px black;
+    /*box shadow ułożony jest tak że najpierw jest ściana a potem respektywne uzupełnienie w kącie*/
+    margin-bottom: 20px;
+    margin-top: 20px;
+    transition: 0.7s;
+}
+.ht-h2{
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    text-align: center;
+    color:rgb(43, 43, 43);
+    text-shadow: 2px 1px 0px yellow;
+    font-family: 'Road Rage';
+    font-size: 50px;
+    transition: 0.7s;
+}
+#ht-wrap:hover .ht-h2{
+    letter-spacing: 10px;
+    font-size: 60px;
+    color:yellow;
+    background-color: rgb(43, 43, 43);  
+    border-radius: 20px;
+    text-shadow: 2px 1px 0px black;
+}
+#ht-wrap:hover #video{
+    margin-left: 20px;
+    margin-right: 20px;
 }
