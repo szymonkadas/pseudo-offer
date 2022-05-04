@@ -3,6 +3,7 @@
     --yellow: rgb(255,225,0);
     --blackish: rgb(43,43,43);
     --whitish: rgb(225,225,225);
+    --light-yellow: rgb(253, 253, 202);
 }
 body{
     margin: 0px;
@@ -26,7 +27,8 @@ main{
 #logo-link{
     text-decoration: none;
     color: var(--blackish);
-    display: flex;}
+    display: flex;
+    cursor: pointer;}
 #logo-link:hover + nav{
     width: 96%;}
 #header-img-text{
@@ -83,7 +85,8 @@ nav{
     justify-content: center;;
     transition: 0.5s;
     border-radius: 2rem;
-    margin-left: 15px;}
+    margin-left: 15px;
+    cursor: pointer;}
 .nav-link:hover{
     color: var(--whitish);
     background-color: var(--blackish);
@@ -101,85 +104,6 @@ nav{
     background-color: var(--whitish);
     border-radius: 2px;
     width: 100%;}
-/*  */
-/*  */
-/*  */
-/*  */
-/* Formularz */
-/*  */
-/*  */
-/*  */
-/*  */
-#input{
-    padding: 20px 0px 20px 0px;
-    background-color: rgb(253, 253, 202);
-    margin-bottom: -10px;}
-#input h1, #features h1{
-    position:relative; /* potrzebne bym nie był pod tłem */
-    text-align: center;
-    font-size: 30px;
-    color:rgb(43, 43, 43);
-    text-shadow: 1px 1px 0px var(--yellow);
-    width: fit-content;
-    margin: auto;
-    z-index: 2;
-    letter-spacing: 5px;}
-#h1-background{
-    display: block;
-    background-color: rgb(255, 255, 0);
-    width: 235px;
-    height: 6px !important;
-    border-radius: 50%;
-    margin: auto;
-    position: relative;
-    top: -15px;
-    z-index: 1;}
-#input p, #features p{
-    font-weight: 400;
-    width: max-content;
-    margin: auto;
-    font-family: 'Smooch Sans';
-    font-size: 20px;}
-#input form{
-    align-items: center;
-    display: flex;
-    flex-direction: column;}
-#email{
-    border-radius: 2px;
-    border-width: 4px;
-    border-color: var(--yellow);
-    border-style: solid;
-    box-shadow: 3px 3px 0px var(--blackish), 6px 6px 0px var(--yellow);
-    padding: 5px;
-    width: 250px;
-    margin: 10px;}
-#input input[type='email']{
-    font-size: 18px;
-    font-family: 'Smooch Sans';
-    text-align: center;}
-#input input[type='email']:focus{
-    outline: none;
-    font-weight: 600;}
-#submit{
-    margin-top: 5px;
-    width: 150px;
-    border-color: var(--yellow);
-    box-shadow: 3px 3px 0px var(--blackish), 6px 6px 0px var(--yellow);
-    border-width: 3px;
-    border-style: solid;
-    background-color: white;
-    color: var(--blackish);  
-    font-family: 'Smooch Sans';
-    font-size: 20px;
-    font-weight: 900;
-    transition: 0.7s;}
-#submit:hover{
-    background-color: var(--blackish);
-    color: white;
-    letter-spacing: 3px;}
-#submit:active{
-    width: 160px;
-    height: 30px;}
 /*  */
 /*  */
 /*  */
@@ -256,7 +180,7 @@ nav{
     writing-mode: vertical-rl;
     text-orientation: upright;
     text-align: center;
-    color:rgb(43, 43, 43);
+    color:var(--blackish);
     text-shadow: 2px 1px 0px var(--yellow);
     font-family: 'Road Rage';
     font-size: 50px;
@@ -265,7 +189,7 @@ nav{
     letter-spacing: 6px;
     font-size: 55px;
     color:var(--yellow);
-    background-color: rgb(43, 43, 43);  
+    background-color: var(--blackish);  
     border-radius: 20px;
     text-shadow: 2px 1px 0px black;}
 #ht-wrap:hover #video{
@@ -286,7 +210,7 @@ nav{
     color: var(--whitish);
 }
 .usługa{
-    background-color:rgb(43, 43, 43);
+    background-color:var(--blackish);
     margin: 0px 20px 0px 20px;
     border-style: solid;
     border-color: var(--yellow);
@@ -342,13 +266,133 @@ nav{
 /*  */
 /*  */
 /*  */
+/*  */
+/* Formularz */
+/*  */
+/*  */
+/*  */
+/*  */
+#input{
+    padding: 20px 0px 50px 0px;
+    background-color: var(--light-yellow);
+    margin-bottom: -10px;}
+#input h1, #features h1{
+    position:relative; /* potrzebne bym nie był pod tłem */
+    text-align: center;
+    font-size: 30px;
+    color:var(--blackish);
+    text-shadow: 1px 1px 0px var(--yellow);
+    width: fit-content;
+    margin: auto;
+    z-index: 2;
+    letter-spacing: 5px;}
+#h1-background{
+    display: block;
+    background-color: yellow;
+    width: 235px;
+    height: 6px !important;
+    border-radius: 50%;
+    margin: auto;
+    position: relative;
+    top: -15px;
+    z-index: 1;}
+#input p, #features p{
+    font-weight: 400;
+    width: max-content;
+    margin: auto;
+    font-family: 'Smooch Sans';
+    font-size: 20px;}
+#input form{
+    align-items: center;
+    display: flex;
+    flex-direction: column;}
+#email{
+    border-radius: 2px;
+    border-width: 4px;
+    border-color: var(--yellow);
+    border-style: solid;
+    box-shadow: 3px 3px 0px var(--blackish), 6px 6px 0px var(--yellow);
+    padding: 5px;
+    width: 250px;
+    margin: 10px;}
+#input input[type='email']{
+    font-size: 18px;
+    font-family: 'Smooch Sans';
+    text-align: center;}
+#input input[type='email']:focus{
+    outline: none;
+    font-weight: 600;}
+#submit{
+    margin-top: 5px;
+    width: 150px;
+    border-color: var(--yellow);
+    box-shadow: 3px 3px 0px var(--blackish), 6px 6px 0px var(--yellow);
+    border-width: 3px;
+    border-style: solid;
+    background-color: white;
+    color: var(--blackish);  
+    font-family: 'Smooch Sans';
+    font-size: 20px;
+    font-weight: 900;
+    transition: 0.7s;}
+#submit:hover{
+    background-color: var(--blackish);
+    color: white;
+    letter-spacing: 3px;}
+#submit:active{
+    width: 160px;
+    height: 30px;}
+/*  */
+/*  */
+/*  */
 /* Footer */
 /*  */
 /*  */
 /*  */
-/* footer{
+footer{
     background-color: var(--yellow);
     height: 100%;
-    margin-bottom: -16px;
     margin-top: -21px;
-} */
+    display: flex;
+    justify-content: space-evenly;
+    padding-bottom: 10px;}
+#contact{
+    font-family: 'Smooch Sans'; 
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;}
+.footer-h4{
+    font-size: 22px;
+    font-family: 'Smooch Sans';
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-weight: 600;
+    margin: 0px;
+    padding: 10px 0px 5px 0px;}
+#contact p{
+    margin: 0px 0px 2px 0px;
+    line-height: 14px;}
+#contact b{
+    font-weight: 600;}
+#socials-container{
+    position: relative;
+    left: -25%;
+    top: 5%;
+    display: flex;
+    justify-content: space-evenly;
+    width: 150%;}
+#socials a{
+    cursor: pointer;}
+#socials img{
+    transition: 0.3s;}
+#socials a:hover img{
+    height: 35px;
+    background-color:white;
+    border-radius: 100px;
+    box-shadow: -2px 1px 0px yellow;}
+#socials a:hover #instagram{
+    height: 35px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: -2px 1px 0px yellow;}
