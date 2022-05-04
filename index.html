@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta name="author" content="SzymonKDA alias Emote">
 <meta name="description" content="Just another FCC website">
 <meta name="keywords" content="FCC, EmotePhilia, Project">
 <meta name="author" content="SzymonKDA">
@@ -11,7 +12,7 @@
 <body>
     <header id="header">
         <a onclick=goToFeatures() id="logo-link">
-        <img id="header-img" src="YourLogo.png" height=60 width="100">
+        <img id="header-img" src="YourLogo.png" height=72 width=120>
         <div id="header-img-text">YOUR&nbsp;LOGO</div>
         </a>
         <nav>
@@ -25,17 +26,17 @@
     <main>
     <section id="features">
         <h1>FEATURES</h1>
-        <div id="h1-background"></div>
+        <div class="h1-background"></div>
         <p>Why you can choose me</p>
-        <div><img src="TanioIkonka.png" height=60 width=60><span><b>Cheap</b>- I deliver my projects at reasonable prices for a newbie like me.</span></div>
-        <div><img src="Fast2.png" height=60><span><b>Fast</b> - I give my best to deliver your orders as fast as possible.</span></div>
-        <div><img src="WellMade.png" height=60 id="video-navigation"><span><b>Well Made</b> - Every project is another one into my portfolio, so i can grow.</span></div>
+        <div><img src="TanioIkonka.png" height=72 width=72><span><b>Cheap</b>- I deliver my projects at reasonable prices for a newbie like me.</span></div>
+        <div><img src="Fast2.png" height=72 width=72><span id="ft-2-span"><b>Fast</b> - I give my best to deliver your orders as fast as possible.</span></div>
+        <div><img src="WellMade.png" height=72 width=72 id="video-navigation"><span><b>Well Made</b> - Every project is another one into my portfolio, so i can grow.</span></div>
     </section>
     <div id="ht-border-color">
     <section id="how-to">
         <div id="ht-wrap">
             <h2 class="ht-h2">YOUR</h2>
-            <iframe id="video" src="https://www.youtube.com/embed/f6mJ7e5YmnE" allowfullscreen="" height="360" width="560" frameborder="0"></iframe>
+            <iframe id="video" src="https://www.youtube.com/embed/f6mJ7e5YmnE" allowfullscreen="" height="360" width="640" frameborder="0"></iframe>
             <h2 class="ht-h2">VIDEO</h2>
         </div>
     </section>
@@ -43,12 +44,13 @@
     <section id="prices">
         <div class="usługa">
             <p class="nazwa-usługi">business card page (BC)</p>
-            <h3 class="cena">200-300zł</h3>
+            <h3 class="cena">250-350zł</h3>
             <ul>
-                <li>2-4 Days to make it done</li>
+                <li>3-5 Days to make it done</li>
                 <li>1 Month Guarranty (website)</li>
                 <li>With Domain name and server for additional 50zł a year with service.</li>
                 <li>With Free Logo/Icons</li>
+                <li>Responsive</li>
             </ul>
             <a href="#"><button class="buy">YOU CAN SEE IT NOW</button></a>
         </div>
@@ -72,13 +74,14 @@
                 <li>6 Weeks Guarranty (website/subpages).</li>
                 <li>With Domain name and server for additional 50zł a year with service.</li>
                 <li>With Free Logo/Icons</li>
+                <li>Responsive</li>
             </ul>
             <button class="buy">CHECK</button>
         </div>
     </section>
     <section id="input">
         <h1>ORDER A PAGE</h1>
-        <div id="h1-background"></div>
+        <div class="h1-background"></div>
         <p>Put here your e-mail and I'll contact you.</p>
         <form method="post" action="https://www.freecodecamp.org/email-submit">
             <input type="email" name="email" id="email" placeholder="Enter your email here">
@@ -94,7 +97,7 @@
             <p><b>Email</b>: your@site.com</p>
         </section>
         <section id="socials">
-            <h4 class="footer-h4"> Socials </h4>
+            <h4 class="footer-h4"> Socials</h4>
             <div id="socials-container">
             <a onclick=goToInstagram()><img class="footer-img" id="instagram" alt="Instagram" src="Instagram.png" height="25"></a>
             <a onclick=goToFacebook()><img class="footer-img" alt="Facebook" src="Facebook.png" height="25"></a>
