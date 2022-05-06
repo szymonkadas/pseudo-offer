@@ -15,7 +15,7 @@ const goToWordpress = ()=>{
 const goToPrices = ()=>{
     deviceType = test();
     if(deviceType="desktop"){
-        window.scroll(0,775);
+        window.scroll(0,1100);
     }
     else if(deviceType="tablet"){
         window.scroll(0,100);
@@ -37,9 +37,11 @@ const goToInstagram = ()=>{
 let licznik = 0;
 const openMenu = ()=>{
     const obiekt = document.querySelector("#nav-ul-phone");
+    const nav = document.querySelector("nav");
     if(licznik == 0){
         obiekt.style.display = "flex";
-        licznik++;
+        nav.style.gridTemplateAreas = '"logo rozwin" "nav nav"';    
+        licznik++; 
         return;
     }
     else if(licznik==1){
