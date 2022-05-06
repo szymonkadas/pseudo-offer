@@ -26,6 +26,12 @@ main{
     z-index: 20;
     display: grid;
     grid-template-columns: 27% 1fr;}
+#rozwin{
+    display: none;
+}
+#nav-ul-phone{
+    display: none;
+}
 #header-img{
     padding-left: 2%;}
 #logo-link{
@@ -736,7 +742,36 @@ nav{
     margin-left: -5%;
 }
 }
-@media (max-width: 900px){
+@media (max-width: 950px){
+#prices{
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+.usługa{
+    margin: 0px 100px 40px 100px;
+    box-shadow: 3px 0px 0px black,3px 3px 0px black, -3px 0px 0px black,-3px 3px 0px black, 0px 3px 0px black, 0px -3px 0px black,-3px -4px 0px black, 3px -3px 0px black;
+    grid-template-rows: 50px 120px 250px 1fr;
+}
+.cena, .nazwa-usługi{
+    text-shadow: 1px 1px 0px black;
+    font-size: 30px;
+}
+
+.cena:hover, .nazwa-usługi:hover{
+    letter-spacing: 5px;
+    font-size: 35px;
+}
+#prices ul{
+    list-style:none;
+    margin-right: 10px;
+    margin-left: -20px;
+    text-align: center;
+}
+#prices li{
+    padding: 5px 0px 5px 0px;
+    margin-right: 15px;
+    font-size: 20px;
+}
 #header{
     grid-template-columns: 32% 1fr;}
 #header-img{
@@ -813,11 +848,66 @@ nav{
 }
 @media (max-width:695px) {
     /* nav */
+    #header{
+    grid-template-columns: 120px 1fr;}
+#header-img{
+    padding-left: 2%;}
+#logo-link{
+    text-decoration: none;
+    color: var(--blackish);
+    display: flex;
+    cursor: pointer;}
+#logo-link:hover + nav{
+    width: 96%;}
+#header-img-text{
+    display: none;}
+nav{ width: 100%; }
+#nav-ul{
+    display: none;}
+#rozwin{
+    display:flex; 
+    height: 40px;
+    margin-top: 9px;
+    justify-content: flex-end;
+}
+.nav-link{
+    display: flex;
+    list-style: none;
+    text-decoration: none;
+    color: black;
+    text-transform: uppercase;
+    font-size: 20px;
+    align-self: center;
+    height: 100%;
+    width: 33%;
+    text-align: center;
+    justify-content: center;;
+    transition: 0.5s;
+    border-radius: 2rem;
+    margin-left: 6px;
+    cursor: pointer;}
+.nav-link:hover{
+    color: var(--whitish);
+    background-color: var(--blackish);
+    border-radius: 0rem;
+    letter-spacing: 2px;}
+.nav-link li{
+    align-self: center;}
+.nav-link li::after{
+    content:'';
+    display: block;
+    height: 4px;
+    transition: 0.5s;
+    width: 0%;}
+.nav-link:hover li::after{
+    background-color: var(--whitish);
+    border-radius: 2px;
+    width: 100%;}
     /* zmienić layout twoje film video na kolumnę */
     /* zmienić layout cen na 1 pod drugim albo tak zrobić jak featury ale wciąż w tym samym stylu */
 }
-@media (max-width: 400px){
+/* @media (max-width: 400px){
     /* Telefon */
     /* footer i email jest ok */
     /* reszta do zrobienia */
-}
+    /* Trzeba dodać jeszcze linki do zdjęć w html'u zamiast lokalnie to do githuba }*/ 
