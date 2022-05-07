@@ -12,7 +12,7 @@
 <body>
     <header id="header">
         <nav>
-            <a onclick=goToFeatures() id="logo-link">
+            <a id="logo-link">
             <img id="header-img" src="YourLogo.png">
             <div id="header-img-text">YOUR&nbsp;LOGO</div>
             </a>
@@ -22,27 +22,29 @@
                 <a onclick=goToPrices() class="nav-link"><li>Prices</li></a>
             </ul>
             <div id="rozwin"><img src="rozwin.png" onclick=openMenu()></img></div>
-            <ul id="nav-ul-phone">                
-                <a onclick=goToFeatures() class="nav-link-phone"><li id="first-li">Features</li></a>
-                <a href="#video-navigation" class="nav-link-phone"><li>How It's Done</li></a>
-                <a onclick=goToPrices() class="nav-link-phone"><li>Prices</li></a>
-            </ul>
         </nav>
     </header>
+    <ul id="nav-ul-phone">                
+        <a onclick=goToFeatures() class="nav-link-phone"><li id="first-li">Features</li></a>
+        <a href="#video-navigation" onclick=zwijacz() class="nav-link-phone"><li>How It's Done</li></a>
+        <a onclick=goToPrices() class="nav-link-phone"><li>Prices</li></a>
+    </ul>
     <main>
     <section id="features">
         <h1>FEATURES</h1>
         <div class="h1-background"></div>
         <p>Why you can choose me</p>
-        <div><img src="TanioIkonka.png" height=72 width=72>
-            <span class="features-span"><b>Cheap:</b> I deliver my projects at reasonable prices for a newbie like me.</span>
-        </div>
-        <div><img src="Fast2.png" height=72 width=72>
-            <span id="ft-2-span" class="features-span"><b>Fast:</b> I give my best to deliver your orders as fast as possible.</span>
-        </div>
-        <div><img src="WellMade.png" height=72 width=72 id="video-navigation">
-            <span class="features-span"><b>Well Made:</b> Every project is another one into my portfolio, so i can grow.</span>
-        </div>
+        <article id="features-container">
+            <div><img src="TanioIkonka.png" height=72 width=72>
+                <span class="features-span"><b>Cheap:</b> I deliver my projects at reasonable prices for a newbie like me.</span>
+            </div>
+            <div><img src="Fast2.png" height=72 width=72>
+                <span id="ft-2-span" class="features-span"><b>Fast:</b> I give my best to deliver your orders as fast as possible.</span>
+            </div>
+            <div><img src="WellMade.png" height=72 width=72 id="video-navigation">
+                <span class="features-span"><b>Well Made:</b> Every project is another one into my portfolio, so i can grow.</span>
+            </div>
+        </article>
     </section>
     <div id="ht-border-color">
         <section id="how-to">
@@ -56,7 +58,7 @@
         </section>
     </div>
     <section id="prices">
-        <div>
+        <div id="prices-h1">
             <h1>prices</h1>
             <div class="h1-background"></div>
         </div>

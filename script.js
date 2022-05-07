@@ -8,11 +8,15 @@ function test(){
     }
     return "desktop";
 };
+function zwijacz(target=document.querySelector("#nav-ul-phone")){
+    target.style.transform=`translateY(${target.style.transform == "" || target.style.transform=="translateY(-150%)"  ? "0" : "-150%"})`;
+}
 let deviceType = test();
 const goToWordpress = ()=>{
     window.open('http://localhost/wordpress')
 }
 const goToPrices = ()=>{
+    const obiekt = document.querySelector("#nav-ul-phone");
     deviceType = test();
     if(deviceType="desktop"){
         window.scroll(0,1100);
@@ -20,10 +24,13 @@ const goToPrices = ()=>{
     else if(deviceType="tablet"){
         window.scroll(0,100);
     }
+    zwijacz(obiekt);
     console.log(deviceType);
 }
 const goToFeatures = ()=>{
     window.scroll(0,0);
+    const obiekt = document.querySelector("#nav-ul-phone");
+    zwijacz(obiekt);
 }
 const goToTwitter = ()=>{
     window.open('https://twitter.com')
@@ -37,15 +44,14 @@ const goToInstagram = ()=>{
 let licznik = 0;
 const openMenu = ()=>{
     const obiekt = document.querySelector("#nav-ul-phone");
-    const nav = document.querySelector("nav");
     if(licznik == 0){
         obiekt.style.display = "flex";
-        nav.style.gridTemplateAreas = '"logo rozwin" "nav nav"';    
+        zwijacz(obiekt);
         licznik++; 
         return;
     }
     else if(licznik==1){
-        obiekt.style.display = "none";
+        zwijacz(obiekt);
         licznik = 0;
         return;
     }

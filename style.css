@@ -8,84 +8,97 @@
 body{
     margin: 0px;
     font-family: 'Radio Canada';
-    background-color: rgb(250,250,250);}
+    background-color: rgb(250,250,250);
+}
 main{
-    margin: 0px;}
+    margin: 0px;
+    overflow: hidden;}
 
 *{
     transition: 0.7s;
 }
 
-@media (max-width: 1000000px) and (min-width:551px){
+@media (max-width: 1000000px) and (min-width:696px){
     /* Header */
 
 #header{
     position: sticky;
     top: 0px;
-    width: 100%;
     background-color: var(--yellow);
-    font-family: 'Road Rage';
-    z-index: 20;
-    display: grid;
-    grid-template-columns: 27% 1fr;}
+    z-index: 100;
+    height: 92px;
+    overflow: hidden;
+}
 #rozwin{
     display: none;
 }
 #nav-ul-phone{
     display: none;
 }
-#header-img{
-    padding-left: 2%;}
 #logo-link{
     text-decoration: none;
     color: var(--blackish);
     display: flex;
-    cursor: pointer;}
-#logo-link:hover + nav{
-    width: 96%;}
+    cursor: pointer;
+    width: fit-content;
+    height: 92px;}
+#header-img{
+    padding-left: 10px;
+    padding-top: 6px; 
+    height: 80px;}
 #header-img-text{
-    position: relative;
-    left: 36px;
+    margin-left: 36px;
     font-weight: 900;
-    padding-top: 11px;
+    padding-top: 22px;
     font-size: 42px;
+    height: fit-content;
     font-family: 'Smooch Sans';}
 #logo-link:hover #header-img-text{
     font-size: 48px;
-    padding-top: 5px;
+    padding-top: 17px;
     color: black;
     letter-spacing: 4px;}
 #header-img-text::after{
     position: relative;
     content:'';
-    top: -9px;
+    top: -10px;
+    left: 5px;
     display: block;
     height: 4px;
-    background:linear-gradient(90deg,rgba(43,43,43,0),rgba(255, 255, 255, 0.844) 25% 75%,transparent 100%);
+    background:linear-gradient(90deg,rgba(0,0,0,0),rgba(255, 255, 255, 0.844) 25% 75%,transparent 100%);
     width: 0%;
-    border-radius: 5px;
     margin-left: 46%;
     margin-right: 46%;}
 #logo-link:hover #header-img-text::after{
     width: 92%;
     margin-left: 0%;
     margin-right: 0%;}
+#logo-link:hover ~ #nav-ul{
+    width: 70vw;
+}
 nav{
-    width: 100%;}
+    /* display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: 'logo rozwin'; */
+    display: flex;
+    }
 #nav-ul{
     margin-top: 0px;
-    width: 95%;
-    height: 100%;
+    margin-bottom: 0px;
+    width: 75vw;
+    height: 92px;
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;}
+    justify-content: flex-end;
+    font-family: 'Road Rage'}
 .nav-link{
     display: flex;
     list-style: none;
     text-decoration: none;
     color: black;
     text-transform: uppercase;
-    font-size: 30px;
+    font-size: 35px;
     align-self: center;
     height: 100%;
     width: 180px;
@@ -99,19 +112,23 @@ nav{
     color: var(--whitish);
     background-color: var(--blackish);
     border-radius: 0rem;
+    font-size: 36px;
     letter-spacing: 2px;}
 .nav-link li{
     align-self: center;}
 .nav-link li::after{
     content:'';
     display: block;
+    position: relative;
+    top: -6px;
     height: 4px;
     transition: 0.5s;
     width: 0%;}
 .nav-link:hover li::after{
     background-color: var(--whitish);
     border-radius: 2px;
-    width: 100%;}
+    margin: auto;
+    width: 90%;}
 /*  */
 /*  */
 /*  */
@@ -119,14 +136,16 @@ nav{
 /*  */
 /*  */
 /*  */
-
 #features{
     padding-top: 24px;
-    padding-bottom: 24px;
-    width: 972px;
-    margin: auto;}
-#features .h1-background{
-    width: 216px;}
+    padding-bottom: 44px;
+    width: 65vw;
+    margin: auto;
+}
+#features-container{
+    position: relative;
+    top: 20px;
+}
 #features div{
     display: grid;
     grid-template-columns: 120px 1fr;
@@ -134,13 +153,11 @@ nav{
     font-family: 'Smooch Sans';
     font-weight: 500;
     height: 96px;}
-#features p{
-    margin-bottom: 12px;}
 #features b{
     text-shadow: 2px 1px 0px var(--yellow);
     font-weight: 700;
     letter-spacing: 3px;}
-#features span{
+.features-span{
     position: relative;
     top: 50%;
     transform: translateY(-35%);}
@@ -208,12 +225,12 @@ nav{
 #ht-wrap:hover #video{
     margin-left: 25px;
     margin-right: 25px;}
-
-
+.video-desc{
+    display: none;
+}
 
 
 /* Ceny */
-
 
 
 
@@ -224,6 +241,9 @@ nav{
     padding-top: 20px;
     color: var(--whitish);
 }
+#prices-h1{
+    display: none;
+}
 .usługa{
     background-color:var(--blackish);
     margin: 0px 25px 0px 25px;
@@ -232,7 +252,7 @@ nav{
     border-width: 4px;
     box-shadow: 4px 0px 0px black,4px 4px 0px black, -4px 0px 0px black,-4px 4px 0px black, 0px 4px 0px black, 0px -4px 0px black,-4px -4px 0px black, 4px -4px 0px black;
     display: grid;
-    grid-template-rows: 50px 80px 250px 1fr;
+    grid-template-rows: 50px 90px 6fr 1fr;
 }
 .cena, .nazwa-usługi{
     text-align: center;
@@ -246,12 +266,14 @@ nav{
     border-style: solid;
     border-color:var(--yellow);
     padding-bottom: 12px;
+    font-size: 22px;
 }
 .nazwa-usługi{
     font-size: 25.5px;
 }
 #prices ul{
-    list-style:none;
+    list-style:none;    
+    margin-top: 0px;
     margin-right: 20px;
     margin-left: 10px;
     text-align: center;
@@ -259,24 +281,22 @@ nav{
 #prices li{
     padding: 5px 0px 5px 0px;
     margin-right: 30px;
-    font-size: 17px;
+    font-size: 20px;
 }
 .buy{
     width: 100%;
     font-family: 'Road Rage';
-    font-size: 30px;
+    font-size: 35px;
     letter-spacing: 2px;
     text-shadow: -2px 1px 0px var(--yellow);
-    border-radius: 0px;
     border-style: none;
 }
 .buy:hover{
-    font-size: 30px;
+    font-size: 40px;
     letter-spacing: 5px;
     background-color: var(--blackish);
     color: var(--yellow);
     text-shadow: 2px 2px 0px black;
-    border-style: none;
     cursor: pointer;
 }
 
@@ -295,7 +315,7 @@ nav{
 #input h1, #features h1{
     position:relative; 
     text-align: center;
-    font-size: 36px; 
+    font-size: 45px; 
     color:var(--blackish);
     text-shadow: 2px 2px 0px var(--yellow);
     width: fit-content;
@@ -317,7 +337,7 @@ nav{
     width: max-content;
     margin: auto;
     font-family: 'Smooch Sans';
-    font-size: 24px;}
+    font-size: 28px;}
 #input form{
     align-items: center;
     display: flex;
@@ -378,9 +398,9 @@ footer{
     justify-content: center;
     flex-direction: column;
     text-align: center;
-    font-size: 19px}
+    font-size: 22px}
 .footer-h4{
-    font-size: 26px;
+    font-size: 28px;
     font-family: 'Smooch Sans';
     text-transform: uppercase;
     letter-spacing: 5px;
@@ -396,11 +416,15 @@ footer{
 
 #socials-container{
     position: relative;
-    left: -30%;
+    left: 0%;
     top: 5%;
     display: flex;
     justify-content: space-evenly;
-    width: 150%;}
+    width: 200px;}
+#socials .footer-h4{
+    width: fit-content;
+    margin: auto;
+}
 #socials a{
     cursor: pointer;}
 #socials img{
@@ -417,23 +441,22 @@ footer{
     border-radius: 10px;
     margin-left: -10%}
 }
-@media (max-width: 1280px) and (min-width: 551px){
-    #header{
-    grid-template-columns: 27% 1fr;}
+@media (max-width: 1280px) and (min-width: 696px){
+#header{
+    height: 82px;
+}
 #header-img{
     padding-left: 2%;
-    height: 60px;
-    width: 100px;
+    height: 70px;
+    width: 112px;
     }
-#logo-link:hover + nav{
-    width: 96%;}
 #header-img-text{
     left: 30px;
-    padding-top: 10px;
+    padding-top: 20px;
     font-size: 35px;}
 #logo-link:hover #header-img-text{
     font-size: 40px;
-    padding-top: 5px;
+    padding-top: 15px;
     letter-spacing: 3px;}
 #header-img-text::after{
     top: -6px;
@@ -477,8 +500,6 @@ nav{
     padding-bottom: 20px;
     width: 810px;
     margin: auto;}
-#features .h1-background{
-    width: 180px;}
 #features div{
     grid-template-columns: 100px 1fr;
     font-size: 30px;
@@ -692,262 +713,12 @@ footer{
     border-radius: 10px;
     margin-left: 0%;}
 }
-@media (max-width: 1500px) and (min-width: 551px){
-    .nazwa-usługi{
-    font-size: 23px;
-    }
-    .usługa{
-    grid-template-rows: 50px 80px 280px 1fr;
-    }
-    
-}
-@media (max-width: 1400px) and(min-width: 551px){
-    .nazwa-usługi{
-    font-size: 21.5px;
-    }
-}
-@media (max-width: 1340px) and (min-width: 551px){
-    .nazwa-usługi{
-    font-size: 20px;
-    }
-}
-@media (max-width: 1200px) and (min-width: 551px){
-#prices{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr ;
-    padding-bottom: 32px;
-    padding-top: 16px;
-    color: var(--whitish);
-}
-.usługa{
-    margin: 0px 20px 0px 20px;
-    box-shadow: 3px 0px 0px black,3px 3px 0px black, -3px 0px 0px black,-3px 3px 0px black, 0px 3px 0px black, 0px -3px 0px black,-3px -4px 0px black, 3px -3px 0px black;
-    grid-template-rows: 40px 64px 250px 1fr;
-}
-.cena, .nazwa-usługi{
-    text-shadow: 1px 1px 0px black;
-    font-size: 17px;
-}
-.cena{
-    border-style: solid;
-    border-color:var(--yellow);
-    padding-bottom: 30px;
-    font-weight: 500;
-}
-#prices ul{
-    list-style:none;
-    margin-right: 10px;
-    margin-left: -20px;
-    text-align: center;
-}
-#prices li{
-    padding: 5px 0px 5px 0px;
-    margin-right: 15px;
-    font-size: 15px;
-}
-#video{
-    width: 550px;
-    height: 320px;
-}
-nav{
-    margin-left: -5%;
-}
-}
-@media (max-width: 950px) and (min-width: 551px){
-#prices{
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-}
-.usługa{
-    margin: 0px 100px 40px 100px;
-    box-shadow: 3px 0px 0px black,3px 3px 0px black, -3px 0px 0px black,-3px 3px 0px black, 0px 3px 0px black, 0px -3px 0px black,-3px -4px 0px black, 3px -3px 0px black;
-    grid-template-rows: 50px 120px 250px 1fr;
-}
-.cena, .nazwa-usługi{
-    text-shadow: 1px 1px 0px black;
-    font-size: 30px;
-}
-
-.cena:hover, .nazwa-usługi:hover{
-    letter-spacing: 5px;
-    font-size: 35px;
-}
-#prices ul{
-    list-style:none;
-    margin-right: 10px;
-    margin-left: -20px;
-    text-align: center;
-}
-#prices li{
-    padding: 5px 0px 5px 0px;
-    margin-right: 15px;
-    font-size: 20px;
-}
-#header{
-    grid-template-columns: 32% 1fr;}
-#header-img{
-    width: 90px;
-    height: 56px;
-    padding-bottom: 2px;
-}
-#header-img-text{
-    left: 20px;
-    padding-top: 11px;
-    font-size: 30px;
-    font-family: 'Smooch Sans';}
-#logo-link:hover #header-img-text{
-    font-size: 36px;
-    padding-top: 6px;
-    color: black;
-    letter-spacing: 4px;}
-nav{
-    width: 100%;
-    margin-left: -4%;
-}
-#nav-ul{
-    justify-content: space-between;}
-.nav-link{
-    font-size: 24px;
-    width: 140px;
-    margin-left: 0px;}
-#features{
-    width: 65vw;
-}
-#features div{
-    display: grid;
-    grid-template-columns: 100px 1fr;
-    font-size: 23px;}
-#features span{
-    position: relative;
-    top: 40%;
-    transform: translateY(-35%);}
-#ft-2-span{
-    position: relative;
-    top: 50% !important;
-    transform: translateY(-35%);}
-.ht-h2{
-    writing-mode: vertical-rl;
-    text-orientation: upright;
-    text-align: center;
-    color:var(--blackish);
-    text-shadow: 2px 1px 0px var(--yellow);
-    font-family: 'Road Rage';
-    font-size: 55px;
-    letter-spacing: -10px;}
-#ht-wrap:hover .ht-h2{
-    letter-spacing: -5px;
-    font-size: 55px;
-    color:var(--yellow);
-    background-color: var(--blackish);  
-    border-radius: 20px;
-    text-shadow: 2px 1px 0px black;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    padding-top: 0px;}
-#ht-wrap:hover #video{
-    margin-left: 0px;
-    margin-right: 0px;}
-}
-@media (max-width:865px) and (min-width: 551px) {
-    #ft-2-span{
-        top: 40% !important;
-    }
-    #video{
-        width: 360px;
-        height: 200px;
-    }
-}
-@media (max-width:695px) and (min-width: 551px) {
-    #header{
-    grid-template-columns: 120px 1fr;}
-#header-img{
-    padding-left: 2%;}
-#logo-link{
-    text-decoration: none;
-    color: var(--blackish);
-    display: flex;
-    cursor: pointer;}
-#logo-link:hover + nav{
-    width: 96%;}
-#header-img-text{
-    display: none;}
-nav{ width: 100%; }
-#nav-ul{
-    display: none;}
-#rozwin{
-    display:flex; 
-    height: 40px;
-    margin-top: 9px;
-    justify-content: flex-end;
-}
-.nav-link{
-    display: flex;
-    list-style: none;
-    text-decoration: none;
-    color: black;
-    text-transform: uppercase;
-    font-size: 20px;
-    align-self: center;
-    height: 100%;
-    width: 33%;
-    text-align: center;
-    justify-content: center;;
-    transition: 0.5s;
-    border-radius: 2rem;
-    margin-left: 6px;
-    cursor: pointer;}
-.nav-link:hover{
-    color: var(--whitish);
-    background-color: var(--blackish);
-    border-radius: 0rem;
-    letter-spacing: 2px;}
-.nav-link li{
-    align-self: center;}
-.nav-link li::after{
-    content:'';
-    display: block;
-    height: 4px;
-    transition: 0.5s;
-    width: 0%;}
-.nav-link:hover li::after{
-    background-color: var(--whitish);
-    border-radius: 2px;
-    width: 100%;}
-}
-
-/* @media (max-width: 400px){
-    /* Telefon */
-    /* footer i email jest ok */
-    /* reszta do zrobienia */
-    /* Trzeba dodać jeszcze linki do zdjęć w html'u zamiast lokalnie to do githuba }*/ 
-@media (max-width: 550px){
-    main{
-        overflow:hidden;
-    }
+@media (max-width:695px){
     #header{
         position: sticky;   
+        top: 0px;
         background-color: var(--yellow);
-    }
-    #logo-link{
-        grid-area: logo;
-    }
-    #header-img{
-        margin: auto;
-        height: 70px;
-        width: 112px;
-        padding: 5px 0px 5px 15px;
-    }
-    #header-img-text{
-        display: none;
-    }
-    #rozwin{
-        display: flex;
-        justify-content: flex-end;
-    }
-    #rozwin img{
-        width: 50px;
-        height: 50px;
-        margin: 15px 15px 0px 0px;
+        z-index: 100;
     }
     nav{
         display: grid;
@@ -955,17 +726,54 @@ nav{ width: 100%; }
         grid-template-rows: 1fr;
         grid-template-areas: 'logo rozwin';
     }
+    #logo-link{
+        grid-area: logo;
+        z-index: 40;   
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    #header-img{
+        height: 70px;
+        width: 112px;
+        margin: 5px 0px 5px 15px;
+        background-color: var(--yellow);
+    }
+    #header-img-text{
+        font-family: 'Road Rage';
+        font-size: 50px;
+        height: fit-content;
+        margin: auto;
+    }
+    #header-img-text:hover{
+        font-size: 50px;
+        letter-spacing: 2px;
+    }
+    #rozwin{
+        display: flex;
+        justify-content: flex-end;
+        z-index: 40;
+    }
+    #rozwin img{
+        width: 50px;
+        height: 50px;
+        margin: 15px 15px 0px 0px;
+    }
     #nav-ul{
         display: none;
     }
     #nav-ul-phone{
-        display: none;
-        grid-area: nav;
+        display: flex;
+        position: absolute;
+        padding-top: 5px;
+        width: 100%;
         justify-content: space-between;
         list-style: none;
         flex-direction: column;
         padding-left: 0px;
-        margin: 0px 0px 0px 0px;
+        margin: 0px;
+        background-color: var(--yellow);
+        z-index: 10;
+        transform: translateY(-150%);
     }
     .nav-link-phone{
         width: 90%;
@@ -983,9 +791,9 @@ nav{ width: 100%; }
         margin-bottom: 15px;
         cursor: pointer;
     }
-    a{
-        text-decoration: none;
-    }   
+    a{text-decoration: none;}   
+    .nav-link-phone:hover{
+        letter-spacing: 2px;}
     #features{
         width: 90vw;
         margin: auto;
@@ -995,7 +803,7 @@ nav{ width: 100%; }
     #input h1, #features h1, #how-to h1, #prices h1{
         position:relative; 
         text-align: center;
-        font-size: 40px; 
+        font-size: 50px; 
         color:var(--blackish);
         text-shadow: 2px 2px 0px var(--yellow);
         width: fit-content;
@@ -1007,12 +815,12 @@ nav{ width: 100%; }
     .h1-background{
         display: block;
         background-color: yellow;
-        width: 240px;
+        width: 250px;
         height: 6px !important;
         border-radius: 50%;
         margin: auto;
         position: relative;
-        top: -15px;
+        top: -20px;
         z-index: 1;
     }
     #input p, #features p{
@@ -1022,26 +830,23 @@ nav{ width: 100%; }
         font-family: 'Smooch Sans';
         font-size: 28px;
     }
-    .h1-background{
-        width: 216px;
-        color: yellow;
-    }
     #features div{
         display: grid;
         grid-template-columns: 100px 1fr;
-        font-size: 24px;
+        font-size: 28px;
         font-family: 'Smooch Sans';
         font-weight: 500;
-        height: 96px;
         overflow: hidden;
-        justify-content: center;
+        justify-content: left;
         height: 100px;
     }
     .features-span{
         height: fit-content;
         margin: auto;
+        margin-left: 0px;
     }
     #features b{
+        text-shadow: 1px 1px 0px var(--yellow);
         height: fit-content;
     }
     #features img{
@@ -1102,7 +907,7 @@ nav{ width: 100%; }
     }
     .usługa{
         display: grid;
-        grid-template-rows: 40px 30px 1fr 40px;
+        grid-template-rows: 50px 30px 1fr 40px;
         box-shadow: 4px 0px 0px black,4px 4px 0px black, -4px 0px 0px black,-4px 4px 0px black, 0px 4px 0px black, 0px -4px 0px black,-4px -4px 0px black, 4px -4px 0px black;
         margin-bottom: 25px;
         background-color:var(--blackish);
@@ -1112,15 +917,15 @@ nav{ width: 100%; }
         color: var(--whitish);
         height: fit-content;
     }
-    .usługa p{
+    .nazwa-usługi{
         padding-top: 10px;
-        font-size: 36px;
+        font-size: 39px;
         font-family: 'Road Rage';
         margin: auto;
         text-transform: uppercase;
     }
     .cena{
-        font-size: 30px;
+        font-size: 34px;
         font-family:'Smooch Sans';
         text-transform: none;
         font-weight: 500; 
@@ -1136,23 +941,19 @@ nav{ width: 100%; }
         padding-top: 10px;
         justify-content: center;
         list-style: square;
+        font-size: 20px;
     }
     .buy{
         width: 100%;
         font-family: 'Road Rage';
-        font-size: 30px;
+        font-size: 35px;
         letter-spacing: 2px;
         text-shadow: -2px 1px 0px var(--yellow);
         border-radius: 0px;
         border-style: none;
     }
     .buy:hover{
-        font-size: 30px;
         letter-spacing: 5px;
-        background-color: var(--blackish);
-        color: var(--yellow);
-        text-shadow: 2px 2px 0px black;
-        border-style: none;
         cursor: pointer;
     }
 
@@ -1172,7 +973,7 @@ nav{ width: 100%; }
         border-style: solid;
         box-shadow: 4px 4px 0px var(--blackish), 7px 7px 0px var(--yellow);
         padding: 5px;
-        width: 300px;
+        width: 50vw;
         margin: 12px;
         transition: 0.2s}
     #input input[type='email']{
@@ -1184,7 +985,7 @@ nav{ width: 100%; }
         font-weight: 600;}
     #submit{
         margin-top: 6px;
-        width: 180px;
+        width: 30vw;
         border-color: var(--yellow);
         box-shadow: 3px 3px 0px var(--blackish), 6px 6px 0px var(--yellow);
         border-width: 3.5px;
@@ -1199,7 +1000,7 @@ nav{ width: 100%; }
         color: white;
         letter-spacing: 3px;}
     #submit:active{
-        width: 185px;
+        width: 28vw;
         height: 32px;}
 
 
@@ -1241,7 +1042,8 @@ nav{ width: 100%; }
         top: 5%;
         display: flex;
         justify-content: space-evenly;
-        width: 100vw;}
+        margin: auto;
+        width: 60vw;}
     #socials a{
         cursor: pointer;}
     #socials img{
@@ -1254,4 +1056,183 @@ nav{ width: 100%; }
         margin-left: 0%;}
     #socials a:hover #instagram{
         border-radius: 12px;}
+}
+
+/* @media (max-width: 400px){
+    /* Telefon */
+    /* footer i email jest ok */
+    /* reszta do zrobienia */
+    /* Trzeba dodać jeszcze linki do zdjęć w html'u zamiast lokalnie to do githuba }*/ 
+@media (max-width: 550px){
+    main{
+        overflow:hidden;
+    }
+    #header-img-text{
+        display: none;
+    }
+    #nav-ul{
+        display: none;
+    }
+    a{
+        text-decoration: none;
+    }   
+    #input h1, #features h1, #how-to h1, #prices h1{
+        font-size: 40px; 
+    }
+    .h1-background{
+        width: 216px;
+        top: -16px;
+    }
+    #features div{
+        font-size: 24px;
+        font-family: 'Smooch Sans';
+    }
+
+
+
+
+    .video-desc{
+        grid-area: desc;
+        margin-top: 10px;
+        margin-bottom: 15px;
+    }
+
+
+    #prices{
+        display: flex;
+        flex-direction: column;
+        width: 90vw;
+        margin: auto;
+        margin-top: 10px;
+    }
+    .usługa{
+        grid-template-rows: 40px 30px 1fr 40px;
+        margin-bottom: 25px;
+    }
+    .nazwa-usługi{
+        font-size: 36px;
+    }
+    .cena{
+        font-size: 30px;
+    }
+    .buy{
+        font-size: 30px;
+    }
+
+
+
+    #email{
+        width: 85vw;
+    }
+    #submit{
+        width: 45vw;
+    }
+    #submit:active{
+        width: 40vw;
+    }
+
+
+
+    footer{
+        background-color: var(--yellow);
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding-bottom: 15px;  
+        font-size: 24px;
+        }
+    #contact{
+        font-family: 'Smooch Sans'; 
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;}
+    .footer-h4{
+        font-size: 34px;
+        font-family: 'Smooch Sans';
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        font-weight: 600;
+        margin: 0px;
+        padding: 12px 0px 6px 0px;
+        text-align: center}
+    #contact p{
+        margin: 0px 0px 2px 0px;
+        line-height: 17px;
+        font-weight: 500;}
+    #contact b{
+        font-weight: 500;
+        text-transform: uppercase;}
+
+    #socials-container{
+        width: 80vw;}
+    #socials a{
+        cursor: pointer;}
+    #socials img{
+        transition: 0.3s;
+        height: 40px;}
+    #socials a:hover img{
+        height: 50px;
+        background-color:white;
+        border-radius: 100px;
+        margin-left: 0%;}
+    #socials a:hover #instagram{
+        border-radius: 12px;}
+}
+@media (max-width: 330px){
+    #input h1, #features h1, #how-to h1, #prices h1{
+        font-size: 30px; 
+    }
+     #input p, #features p{
+        font-size: 21px;
+        width: 90vw;
+        text-align: center;
+    }
+    #features div{
+        grid-template-columns: 60px 1fr;
+        font-size: 20px;
+        font-family: 'Smooch Sans';
+        font-weight: 500;
+        overflow: hidden;
+        justify-content: center;
+        height: 100px;
+    }
+    #features img{
+        height: 50px;
+        width: 50px;
+    }
+    .video-desc h1, .h1-background{
+        display: none;
+    }
+    #video{
+        margin-top: 4px;
+        margin-bottom: -21px;
+    }
+    #prices h1{
+        margin-top: 0px;
+        margin-bottom: 10px;
+    }
+    .nazwa-usługi{
+        font-size: 26px;
+    }
+    .cena, .buy{
+        font-size: 24px;
+    }
+    .buy:hover{
+        font-size: 25px;
+        letter-spacing: 3px;
+    }
+    .usługa ul{
+        margin-left: -5%;
+    }
+    .usługa li{
+        font-size: 14px;
+    }
+    #socials img{
+        height: 30px;}
+    #socials a:hover img{
+        height: 35px;}
+    #socials a:hover #instagram{
+        border-radius: 10px;}
 }
