@@ -1,36 +1,30 @@
-function test(){
-    const ua = navigator.userAgent;
-    if (/(tablet|iPad|playbook|silk)|(android(?!.*mobi))/i.test(ua)) {
-        return "tablet";
-    }
-    else if (/Mobile|Android|iP(hone|od)|IEMobile|BlackBerry|Kindle|Silk-Accelerated|(hpw|web)OS|Opera M(obi|ini)/.test(ua)) {
-        return "mobile";
-    }
-    return "desktop";
-};
 function zwijacz(target=document.querySelector("#nav-ul-phone")){
+    if(target.style.transition == 0){
+        target.setAttribute('style', 'transition: 0.7s !important')
+    }
+//!po użyciu 1'krotnym potem nie działa, nie wysuwa się, a po 2'gim kliku sie jebie
+    target.style.height = `${target.style.height == "200px" ? "0px" : "200px"}`;
     target.style.transform=`translateY(${target.style.transform == "" || target.style.transform=="translateY(-150%)"  ? "0" : "-150%"})`;
 }
-let deviceType = test();
 const goToWordpress = ()=>{
     window.open('http://localhost/wordpress')
 }
 const goToPrices = ()=>{
     const obiekt = document.querySelector("#nav-ul-phone");
-    deviceType = test();
-    if(deviceType="desktop"){
-        window.scroll(0,1100);
+    if(window.innerWidth>1280){
+        window.scroll(0,800);
     }
-    else if(deviceType="tablet"){
-        window.scroll(0,100);
+    else if(window.innerWidth<1280&&window.screen.width>895){
+        window.scroll(0,820);
+    }
+    else{
+        window.scroll(0,22000);
     }
     zwijacz(obiekt);
-    console.log(deviceType);
+    console.log(window.innerWidth);
 }
 const goToFeatures = ()=>{
     window.scroll(0,0);
-    const obiekt = document.querySelector("#nav-ul-phone");
-    zwijacz(obiekt);
 }
 const goToTwitter = ()=>{
     window.open('https://twitter.com')
@@ -50,9 +44,10 @@ const openMenu = ()=>{
         licznik++; 
         return;
     }
-    else if(licznik==1){
+    else if(licznik!=0){
         zwijacz(obiekt);
         licznik = 0;
+        setTimeout(()=>{obiekt.style.display = "none"},900)
         return;
     }
 }
