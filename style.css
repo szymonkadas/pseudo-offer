@@ -25,7 +25,7 @@ a{
     color: black;
 }
 
-@media (max-width: 1000000px) and (min-width:696px){
+@media (max-width: 1000000px) and (min-width:695px){
     /* Header */
 
 #header{
@@ -215,7 +215,8 @@ nav{
     text-shadow: 2px 1px 0px var(--yellow);
     font-family: 'Smooch Sans';
     font-size: 60px;
-    padding-top: 20px;}
+    padding-top: 20px;
+    cursor: default;}
 #ht-wrap:hover .ht-h2{
     letter-spacing: 6px;
     color:var(--yellow);
@@ -254,7 +255,7 @@ nav{
     border-width: 4px;
     box-shadow: 4px 0px 0px black,4px 4px 0px black, -4px 0px 0px black,-4px 4px 0px black, 0px 4px 0px black, 0px -4px 0px black,-4px -4px 0px black, 4px -4px 0px black;
     display: grid;
-    grid-template-rows: 50px 90px 6fr 1fr;
+    grid-template-rows: 50px 90px 6fr 50px;
 }
 .cena, .nazwa-usługi{
     text-align: center;
@@ -300,6 +301,9 @@ nav{
     color: var(--yellow);
     text-shadow: 2px 2px 0px black;
     cursor: pointer;
+}
+.buy:hover a{
+    color: var(--yellow);
 }
 
 
@@ -443,7 +447,7 @@ footer{
        background-color: rgb(250,250,250);
     border-radius: 11px;}
 }
-@media (max-width: 1280px) and (min-width: 696px){
+@media (max-width: 1280px) and (min-width: 695px){
 #header{
     height: 82px;
 }
@@ -548,7 +552,7 @@ footer{
     margin: 0px 20px 0px 20px;
     border-width: 3px;
     box-shadow: 3px 0px 0px black,3px 3px 0px black, -3px 0px 0px black,-3px 3px 0px black, 0px 3px 0px black, 0px -3px 0px black,-3px -3px 0px black, 3px -3px 0px black;
-    grid-template-rows: 40px 80px 6fr 1fr;}
+    grid-template-rows: 40px 80px 6fr 45px;}
 .usługa:nth-child(3){
     grid-area: Shop;
     width: 60vw;
@@ -572,10 +576,10 @@ footer{
 #prices li{
     font-size: 20px;}
 .buy{
-    font-size: 25px;
+    font-size: 30px;
     text-shadow: 1px 1px 0px var(--yellow);}
 .buy:hover{
-    font-size: 30px;
+    font-size: 35px;
     text-shadow: 1px 1px 0px black;
     border-style: none;}
 

@@ -9,22 +9,45 @@ function zwijacz(target=document.querySelector("#nav-ul-phone")){
 const goToWordpress = ()=>{
     window.open('http://localhost/wordpress')
 }
+// const goTo = (destination)=>{
+//     destination = document.querySelector(`${destination}`)
+    
+// }
 const goToPrices = ()=>{
-    const obiekt = document.querySelector("#nav-ul-phone");
     if(window.innerWidth>1280){
-        window.scroll(0,800);
+        window.scroll(0,900);
     }
-    else if(window.innerWidth<1280&&window.screen.width>895){
+    else if(window.innerWidth>895){
         window.scroll(0,820);
     }
-    else{
-        window.scroll(0,22000);
+    else if(window.innerWidth > 695){
+        window.scroll(0,980)
     }
-    zwijacz(obiekt);
-    console.log(window.innerWidth);
+    else if(window.innerWidth > 610){
+        window.scroll(0,980)
+    }
+    else if(window.innerWidth > 550){
+        window.scroll(0,940)
+    }
+    else if(window.innerWidth > 400){
+        window.scroll(0,810)
+    }
+    else if(window.innerWidth > 330){
+        window.scroll(0,750);
+    }
+    else{
+        window.scroll(0,500)
+    }
+    // destination = document.querySelector('#features') Bardziej eleganckie podejście, trzeba byłoby pokombinować z eventami, np. żeby po zmianie rozdziałki nie było ich na raz pare :/
+    // destination.addEventListener('click', window.scrollTo({top: destination.scrollHeight+250, behavior: 'smooth'}))
+    zwijacz();
+    console.log(window.innerWidth); //jest jeszcze window.innerWidth, gdzie screen width daje faktycznego ekranu.
 }
 const goToFeatures = ()=>{
-    window.scroll(0,0);
+    const destination = document.querySelector('#features')
+    const scroll = window.scroll(0,0);
+    destination.addEventListener('click', scroll)
+    zwijacz()
 }
 const goToTwitter = ()=>{
     window.open('https://twitter.com')
@@ -38,16 +61,16 @@ const goToInstagram = ()=>{
 let licznik = 0;
 const openMenu = ()=>{
     const obiekt = document.querySelector("#nav-ul-phone");
-    if(licznik == 0){
+    if(licznik === 0){
         obiekt.style.display = "flex";
         zwijacz(obiekt);
-        licznik++; 
+        licznik=1; 
         return;
     }
-    else if(licznik!=0){
+    else if(licznik === 1){
         zwijacz(obiekt);
         licznik = 0;
-        setTimeout(()=>{obiekt.style.display = "none"},900)
+        // setTimeout(()=>{obiekt.style.display = "none"},900) Ta jedna linijka winiła problemom!
         return;
     }
 }
