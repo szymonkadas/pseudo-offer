@@ -807,7 +807,7 @@ footer{
         background-color: var(--yellow);
         z-index: 10;
         transform: translateY(-150%);
-        transition: 0s;
+        transition: 0.3s;
         height: 0px;
         overflow: hidden;
     }
@@ -1102,9 +1102,6 @@ footer{
     /* reszta do zrobienia */
     /* Trzeba dodać jeszcze linki do zdjęć w html'u zamiast lokalnie to do githuba }*/ 
 @media (max-width: 550px){
-    main{
-        overflow:hidden;
-    }
     #header-img-text{
         display: none;
     }

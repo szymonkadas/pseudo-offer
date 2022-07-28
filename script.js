@@ -1,10 +1,18 @@
-function zwijacz(target=document.querySelector("#nav-ul-phone")){
-    if(target.style.transition == 0){
-        target.setAttribute('style', 'transition: 0.7s !important')
+function zwijacz(mode, target=document.querySelector('#nav-ul-phone')){
+    if(mode == 2){
+        target.style.transform='translateY(-150%)';
+        target.style.height = '0px';
     }
-//!po użyciu 1'krotnym potem nie działa, nie wysuwa się, a po 2'gim kliku sie jebie
-    target.style.height = `${target.style.height == "200px" ? "0px" : "200px"}`;
-    target.style.transform=`translateY(${target.style.transform == "" || target.style.transform=="translateY(-150%)"  ? "0" : "-150%"})`;
+    else{
+        target.style.height = `${target.style.height == '200px' ? '0px' : '200px'}`;
+        target.style.transform=`translateY(${target.style.transform == '' || target.style.transform=='translateY(-150%)'  ? '0': '-150%'})`;
+        if(target.style.transform == 'translateY(-150%)'){
+            target.style.visibility = 'hidden';
+        }
+        else{
+            target.style.visibility = 'visible';
+        }
+    }
 }
 const goToWordpress = ()=>{
     window.open('http://localhost/wordpress')
@@ -60,18 +68,33 @@ const goToInstagram = ()=>{
 }
 let licznik = 0;
 const openMenu = ()=>{
-    const obiekt = document.querySelector("#nav-ul-phone");
     if(licznik === 0){
-        obiekt.style.display = "flex";
-        zwijacz(obiekt);
-        licznik=1; 
+        zwijacz();
+        licznik = 1; 
         return;
     }
     else if(licznik === 1){
-        zwijacz(obiekt);
+        zwijacz();
         licznik = 0;
-        // setTimeout(()=>{obiekt.style.display = "none"},900) Ta jedna linijka winiła problemom!
         return;
     }
 }
-    
+let mobile;
+if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+    // true for mobile device
+    mobile = true; 
+  }else{
+    // false for not mobile device
+    mobile = false;
+  }
+
+const rozwin = document.querySelector('#rozwin');
+const main = document.querySelector('main');
+if (mobile == true){
+    rozwin.addEventListener('touchstart', openMenu);
+    main.addEventListener('touchstart', ()=> zwijacz(mode=2));
+}
+else{
+    rozwin.addEventListener('click', openMenu);
+    main.addEventListener('click', ()=> zwijacz(mode=2));
+}
